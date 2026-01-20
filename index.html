@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+
+  <title>VizuKaps</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta content="true" name="HandheldFriendly">
+  <meta content="width" name="MobileOptimized">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+
+  <!-- prettier-ignore -->
+  <style>
+    a,
+    body,
+    center,
+    div,
+    footer,
+    form,
+    header,
+    html,
+    img,
+    li,
+    p,
+    q,
+    section,
+    span,
+    u,
+    ul {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+      font-size: 100%
+    }
+
+    footer,
+    header,
+    section {
+      display: block
+    }
+
+    ul {
+      list-style: none
+    }
+
+    q {
+      quotes: none
+    }
+
+    img {
+      max-width: 100%;
+      height: auto
+    }
+
+    a {
+      text-decoration: underline
+    }
+
+    a:hover {
+      cursor: pointer
+    }
+
+    ::-webkit-input-placeholder {
+      color: #a9a9a9;
+      opacity: 1
+    }
+
+    :-moz-placeholder {
+      color: #a9a9a9;
+      opacity: 1
+    }
+
+    ::-moz-placeholder {
+      color: #a9a9a9;
+      opacity: 1
+    }
+
+    :-ms-input-placeholder {
+      color: #a9a9a9;
+      opacity: 1
+    }
+
+    * {
+      margin: 0;
+      padding: 0
+    }
+
+    * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box
+    }
+
+    a,
+    button,
+    input {
+      outline: 0
+    }
+
+    button,
+    input,
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none
+    }
+
+    html {
+      -ms-text-size-adjust: 100%;
+      -moz-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+      -webkit-font-smoothing: subpixel-antialiased !important
+    }
+
+    input::-webkit-input-placeholder {
+      opacity: 1;
+      transition: opacity .3s ease
+    }
+
+    input::-moz-placeholder {
+      opacity: 1;
+      transition: opacity .3s ease
+    }
+
+    input:-moz-placeholder {
+      opacity: 1;
+      transition: opacity .3s ease
+    }
+
+    input:-ms-input-placeholder {
+      opacity: 1;
+      transition: opacity .3s ease
+    }
+
+    input:focus::-webkit-input-placeholder {
+      opacity: 0;
+      transition: opacity .3s ease
+    }
+
+    input:focus::-moz-placeholder {
+      opacity: 0;
+      transition: opacity .3s ease
+    }
+
+    input:focus:-moz-placeholder {
+      opacity: 0;
+      transition: opacity .3s ease
+    }
+
+    input:focus:-ms-input-placeholder {
+      opacity: 0;
+      transition: opacity .3s ease
+    }
+
+    img {
+      flex-shrink: 0;
+      align-self: center
+    }
+
+    button,
+    input {
+      font-family: inherit
+    }
+
+    * {
+      padding: 0;
+      margin: 0
+    }
+
+    footer,
+    header,
+    section {
+      display: block
+    }
+
+    body,
+    html {
+      height: auto;
+      max-height: 100%
+    }
+
+    body {
+      font-size: 16px;
+      font-family: SFUIDisplay-Regular;
+      color: #fff;
+      -webkit-font-smoothing: antialiased
+    }
+
+    .pink {
+      color: #f760a9
+    }
+
+    .black {
+      color: #000
+    }
+
+    .white {
+      color: #fff
+    }
+
+    .red2 {
+      color: #ef1650
+    }
+
+    a {
+      text-decoration: none;
+      color: #892626
+    }
+
+    .px14 {
+      font-size: 14px
+    }
+
+    .px16 {
+      font-size: 16px
+    }
+
+    .px18 {
+      font-size: 18px
+    }
+
+    .px19 {
+      font-size: 19px
+    }
+
+    .px20 {
+      font-size: 20px
+    }
+
+    .px22 {
+      font-size: 22px
+    }
+
+    .px23 {
+      font-size: 23px
+    }
+
+    .px25 {
+      font-size: 25px
+    }
+
+    .px28 {
+      font-size: 28px
+    }
+
+    .px30 {
+      font-size: 30px
+    }
+
+    .px35 {
+      font-size: 35px
+    }
+
+    .px38 {
+      font-size: 38px
+    }
+
+    .px45 {
+      font-size: 45px
+    }
+
+    .px50 {
+      font-size: 50px
+    }
+
+    .px80 {
+      font-size: 80px
+    }
+
+    .center {
+      text-align: center
+    }
+
+    .upp {
+      text-transform: uppercase
+    }
+
+    .lh140 {
+      line-height: 140%
+    }
+
+    .lh120 {
+      line-height: 120%
+    }
+
+    .blue-dark {
+      color: #56636e
+    }
+
+    .pink {
+      color: #ef1650
+    }
+
+    .sfr {
+      font-family: SFUIDisplay-Regular, sans-serif
+    }
+
+    .sfb {
+      font-family: SFUIDisplay-Bold, sans-serif
+    }
+
+    .sfh {
+      font-family: SFUIDisplay-Heavy, sans-serif
+    }
+
+    .sfl {
+      font-family: SFUIDisplay-Light, sans-serif
+    }
+
+    .sft {
+      font-family: SFUIDisplay-Thin, sans-serif
+    }
+
+    .flex {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex
+    }
+
+    .flex-between {
+      justify-content: space-between
+    }
+
+    .flex-around {
+      justify-content: space-around
+    }
+
+    .flex-center {
+      justify-content: center
+    }
+
+    .flex-top {
+      align-items: flex-start
+    }
+
+    .flex-mid {
+      align-items: center
+    }
+
+    .flex-wrap {
+      flex-wrap: wrap
+    }
+
+    input,
+    select {
+      width: 100%;
+      height: 45px;
+      line-height: 45px;
+      margin: 5px auto;
+      border: 1px solid #000;
+      font-size: 17px;
+      background-color: #fff;
+      color: #000;
+      border-radius: 6px;
+      outline: 0;
+      -webkit-transition: all .3s;
+      -moz-transition: all .3s;
+      -ms-transition: all .3s;
+      -o-transition: all .3s;
+      transition: all .3s;
+      padding-left: 45px
+    }
+
+    select {
+      padding-left: 41px;
+      -webkit-appearance: initial
+    }
+
+    input.name {
+      background: #fff url(images/name.png) no-repeat 15px 50%
+    }
+
+    input.phone {
+      background: #fff url(img/phone.png) no-repeat 13px 50%
+    }
+
+    ::-webkit-input-placeholder {
+      color: #4e4d51;
+      font-family: Arial, Arial, Helvetica, sans-serif
+    }
+
+    ::-moz-placeholder {
+      color: #4e4d51;
+      font-family: Arial, Arial, Helvetica, sans-serif
+    }
+
+    section {
+      width: 100%;
+      max-width: 1920px;
+      margin: 0 auto
+    }
+
+    .wrapper {
+      min-width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+      overflow: hidden
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: 1200px;
+      padding: 0 20px;
+      margin: 0 auto;
+      position: relative
+    }
+
+    .block.one {
+      background: #000 url(images/bg1.jpg) 50% 0 no-repeat;
+      min-height: 1848px
+    }
+
+    .block.one .header {
+      height: 150px
+    }
+
+    .block.one .header div {
+      padding: 20px 0
+    }
+
+    .block.one .header div:nth-child(1) {
+      padding: 40px 0 0
+    }
+
+    .block.one .header div:nth-child(2) {
+      background: url(images/ico1.png) no-repeat 0 50%;
+      padding-left: 60px
+    }
+
+    .block.one .header div:nth-child(3) {
+      background: url(images/ico2.png) no-repeat 0 50%;
+      padding-left: 70px
+    }
+
+    .block.one .header div:nth-child(4) {
+      background: url(images/ico3.png) no-repeat 0 50%;
+      padding-left: 125px
+    }
+
+    .block.one .title {
+      padding: 15px 0 50px
+    }
+
+    .formblock .info {
+      width: 100%;
+      max-width: 800px;
+      position: relative;
+      height: 480px;
+      background: url(images/prod.png) no-repeat 400px 0;
+      color: #000
+    }
+
+    .formblock .info ul {
+      list-style: none
+    }
+
+    .formblock .info ul li {
+      background: url(images/list.png) no-repeat 0 50%;
+      padding: 15px 0 15px 45px
+    }
+
+    .formblock .info .remain {
+      padding: 17px 0 0 15px;
+      position: absolute;
+      width: 100%;
+      max-width: 478px;
+      height: 83px;
+      background: url(images/plashka.png);
+      margin-top: 20px
+    }
+
+    .formblock .info .remain span:first-child {
+      background: #000;
+      color: #fff;
+      padding: 0 12px;
+      border-radius: 10px;
+      margin-right: 20px
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #fff;
+      width: 100%;
+      max-width: 320px;
+      padding: 15px;
+      border-radius: 10px
+    }
+
+    .form .akcia {
+      background: #004990;
+      width: 100%;
+      padding: 15px 0;
+      border-radius: 6px
+    }
+
+    .left-pack {
+      background: #ef1650;
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
+      text-align: center;
+      vertical-align: middle;
+      font-weight: 700;
+      border-radius: 5px;
+      color: #fff
+    }
+
+    .form .spec {
+      padding: 10px 0 0
+    }
+
+    .form .cost {
+      padding: 10px 60px 0;
+      text-align: center
+    }
+
+    .form .cost p {
+      padding: 5px 0
+    }
+
+    .block.one .desc {
+      width: 80%;
+      margin: 40px auto 25px
+    }
+
+    .block.one .pics div {
+      width: 300px;
+      margin: 0 50px
+    }
+
+    .block.one .pics div .px23 {
+      padding: 25px 0 20px
+    }
+
+    .block.one .desc2 {
+      width: 80%;
+      margin: 100px auto 60px
+    }
+
+    .block.one .sympt div {
+      width: 100%;
+      max-width: 200px
+    }
+
+    .block.one .sympt div p {
+      padding-top: 20px
+    }
+
+    .block.two {
+      padding-top: 80px;
+      background: #000 url(images/bg2.jpg) 50% 100% no-repeat;
+      min-height: 612px
+    }
+
+    .block.two p.att {
+      background: url(images/att.png) no-repeat 0 50%, url(images/line.png) no-repeat 130px 100px;
+      padding: 30px 0 30px 130px;
+      width: 90%;
+      margin: 0 auto
+    }
+
+    .block.two .form-block2 {
+      padding: 15px 25px 6px;
+      background: #360060;
+      width: 100%;
+      border-radius: 10px
+    }
+
+    .block.two .spec {
+      padding-top: 20px
+    }
+
+    .block.two form {
+      width: 100%;
+      max-width: 310px
+    }
+
+    .block.three {
+      background: url(images/bg3.jpg) top center #8475b9 no-repeat;
+      padding: 30px 0
+    }
+
+    .block.three .title2 {
+      padding: 30px 0
+    }
+
+    .block.three .pics p {
+      padding-left: 10px;
+      line-height: 120%
+    }
+
+    .block.four {
+      background: #171b26;
+      padding: 30px 0
+    }
+
+    .block.four p {
+      padding: 10px 0
+    }
+
+    .block.five {
+      background: #fff url(images/bg4.jpg) top center no-repeat;
+      height: 1069px;
+      padding: 30px 0
+    }
+
+    .block.five .flex div {
+      width: 100%;
+      max-width: 298px;
+      height: 485px;
+      margin: 6.5px;
+      border-radius: 6px;
+      padding: 20px 28px 0 28px;
+      line-height: 120%
+    }
+
+    .block.five .flex div:nth-child(2n) {
+      color: #171b26
+    }
+
+    .block.five .flex div:nth-child(2n+1) {
+      padding-top: 240px
+    }
+
+    .block.five .flex div p:first-child {
+      font-size: 20px;
+      line-height: 120%;
+      padding-bottom: 25px;
+      text-transform: uppercase
+    }
+
+    .block.five .flex div p:last-child {
+      font-size: 18px;
+      line-height: 22px
+    }
+
+    .block.five .flex div:nth-child(1) {
+      background: #221715 url(images/pic-bg.jpg) no-repeat 50% 0
+    }
+
+    .block.five .flex div:nth-child(2) {
+      background: #fff url(images/pic-bg2.jpg) no-repeat 0 100%
+    }
+
+    .block.five .flex div:nth-child(3) {
+      background: #221715 url(images/pic-bg3.jpg) no-repeat 50% 0
+    }
+
+    .block.five .flex div:nth-child(4) {
+      background: #fff url(images/pic-bg4.jpg) no-repeat 0 100%
+    }
+
+    .block.five .flex div:nth-child(5) {
+      background: #221715 url(images/pic-bg5.jpg) no-repeat 50% 0
+    }
+
+    .block.five .flex div:nth-child(6) {
+      background: #fff url(images/pic-bg6.jpg) no-repeat 0 100%
+    }
+
+    .footer_section {
+      background-color: #0c283a;
+      padding: 3% 0
+    }
+
+    .footer_section .title {
+      padding: 0 0 30px
+    }
+
+    .footer_section p {
+      padding: 5px 0
+    }
+
+    .footer_section ul li {
+      padding: 10px 0 10px 60px
+    }
+
+    .footer_section ul li:nth-child(1) {
+      background: url(images/ico4.png) no-repeat 0 50%
+    }
+
+    .footer_section ul li:nth-child(2) {
+      background: url(images/ico5.png) no-repeat 0 50%
+    }
+
+    .footer_section ul li:nth-child(3) {
+      background: url(images/ico6.png) no-repeat 0 50%
+    }
+
+    .button {
+      padding-left: 0;
+      display: block;
+      border: 0;
+      height: 54px;
+      line-height: 58px;
+      margin: 10px auto;
+      width: 100%;
+      background: #71b100;
+      outline: 0;
+      cursor: pointer;
+      box-shadow: 0 3px 0 #548300;
+      border-radius: 6px;
+      transition: background .2s
+    }
+
+    .button:hover {
+      background: #83cb03
+    }
+
+    .form-block2 input,
+    .form-block2 select {
+      margin-top: 0;
+      margin-bottom: 10px
+    }
+
+    .form-block2 [type=submit] {
+      margin-bottom: 0
+    }
+
+    @media (max-width:1200px) {
+      .formblock {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap
+      }
+
+      .formblock .info {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%
+      }
+
+      .formblock>* {
+        margin: 0 7.5px 15px
+      }
+
+      .px45 {
+        font-size: 24px
+      }
+
+      .header {
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
+        height: auto !important;
+        padding: 15px;
+        width: calc(100% + 40px);
+        margin-left: -20px
+      }
+
+      .block.one .header div:not(:first-child) {
+        display: none
+      }
+
+      .header>* {
+        margin: 0 7.5px 0
+      }
+
+      .block.one .header div:nth-child(1) {
+        padding-top: 0
+      }
+
+      .block.one .header div {
+        padding: 7px 0
+      }
+
+      .flex {
+        flex-wrap: wrap;
+        justify-content: center
+      }
+
+      .flex>* {
+        margin: 0 7.5px 15px !important
+      }
+
+      .block.two .form-block2 {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap
+      }
+
+      .block.two .form-block2>* {
+        margin: 0 7.5px 15px
+      }
+
+      .block.two .form-block2>:last-child {
+        margin-bottom: 0
+      }
+
+      .block.two .form-block2>:first-child {
+        width: 100%;
+        text-align: center
+      }
+
+      .block.five,
+      .block.three {
+        -webkit-background-size: cover;
+        background-size: cover;
+        height: auto !important
+      }
+
+      .block.three {
+        text-align: center
+      }
+    }
+
+    @media (max-width:992px) {
+      .formblock .info {
+        padding-top: 400px;
+        height: auto;
+        background-position: left 50% top 0 !important
+      }
+
+      .formblock .info ul li {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center
+      }
+
+      .formblock .info .remain {
+        margin-left: auto;
+        margin-right: auto;
+        position: static;
+        padding-left: 0;
+        flex-wrap: nowrap !important
+      }
+
+      .px20 {
+        font-size: 16px
+      }
+
+      .px18 {
+        font-size: 16px
+      }
+
+      .px25 {
+        font-size: 16px
+      }
+
+      .formblock .info ul {
+        background-color: rgba(0, 0, 0, .5) !important;
+        padding: 15px !important
+      }
+
+      .button {
+        font-size: 14px !important
+      }
+    }
+
+    @media (max-width:480px) {
+      .footer_section .title {
+        text-align: center
+      }
+
+      .px80 {
+        font-size: 50px
+      }
+
+      .block.two p.att {
+        background: url(images/att.png) no-repeat 0 50%;
+        padding: 0 !important;
+        padding-top: 100px !important;
+        text-align: center;
+        background-position: top 0 left 50%;
+        width: 100%;
+        margin-bottom: 30px
+      }
+
+      .formblock .info {
+        background: 0 0;
+        padding-top: 0;
+        -webkit-background-size: contain !important;
+        background-size: contain !important
+      }
+
+      .block.one .desc {
+        font-size: 20px
+      }
+
+      .block.three .pics p {
+        font-size: 11px
+      }
+
+      .footer_section .wrap>div>div:last-child {
+        text-align: center
+      }
+    }
+
+    @font-face {
+      font-family: SFUIDisplay-Regular;
+      src: url(fonts/sfuidisplay-regular.eot);
+      src: url(fonts/sfuidisplay-regular.woff2) format('woff2'), url(fonts/sfuidisplay-regular.woff) format('woff'), url(fonts/sfuidisplay-regular.ttf) format('truetype'), url(fonts/sfuidisplay-regular.svg) format('svg');
+      font-weight: 400;
+      font-style: normal
+    }
+
+    @font-face {
+      font-family: SFUIDisplay-Heavy;
+      src: url(fonts/sfuidisplay-heavy.eot);
+      src: url(fonts/sfuidisplay-heavy.woff2) format('woff2'), url(fonts/sfuidisplay-heavy.woff) format('woff'), url(fonts/sfuidisplay-heavy.ttf) format('truetype'), url(fonts/sfuidisplay-heavy.svg) format('svg');
+      font-weight: 400;
+      font-style: normal
+    }
+
+    @font-face {
+      font-family: SFUIDisplay-Bold;
+      src: url(fonts/sfuidisplay-bold.eot);
+      src: url(fonts/sfuidisplay-bold.woff2) format('woff2'), url(fonts/sfuidisplay-bold.woff) format('woff'), url(fonts/sfuidisplay-bold.ttf) format('truetype'), url(fonts/sfuidisplay-bold.svg) format('svg');
+      font-weight: 400;
+      font-style: normal
+    }
+
+    @font-face {
+      font-family: SFUIDisplay-Thin;
+      src: url(fonts/sfuidisplay-thin.eot);
+      src: url(fonts/sfuidisplay-thin.woff2) format('woff2'), url(fonts/sfuidisplay-thin.woff) format('woff'), url(fonts/sfuidisplay-thin.ttf) format('truetype'), url(fonts/sfuidisplay-thin.svg) format('svg');
+      font-weight: 400;
+      font-style: normal
+    }
+
+    #footer {
+      padding-top: 25px !important;
+      padding-bottom: 25px !important;
+      text-align: center !important;
+      font-size: 14px !important;
+      line-height: 22px !important;
+      color: #000 !important;
+      background: #fff !important
+    }
+
+    #footer a {
+      text-decoration: underline;
+      line-height: 1.42857143;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: #000
+    }
+
+    @-webkit-keyframes iconosani {
+      0% {
+        -webkit-transform: perspective(800px) rotateX(-90deg);
+        -moz-transform: perspective(800px) rotateX(-90deg);
+        -o-transform: perspective(800px) rotateX(-90deg);
+        opacity: 1
+      }
+
+      40% {
+        -webkit-transform: perspective(800px) rotateX(30deg);
+        -moz-transform: perspective(800px) rotateX(30deg);
+        -o-transform: perspective(800px) rotateX(30deg);
+        opacity: 1
+      }
+
+      70% {
+        -webkit-transform: perspective(800px) rotateX(-10deg);
+        -moz-transform: perspective(800px) rotateX(-10deg);
+        -o-transform: perspective(800px) rotateX(-10deg)
+      }
+
+      100% {
+        -webkit-transform: perspective(800px) rotateX(0);
+        -moz-transform: perspective(800px) rotateX(0);
+        -o-transform: perspective(800px) rotateX(0);
+        opacity: 1
+      }
+    }
+
+    .footer_section {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+      color: #fff
+    }
+
+    .footer_section a {
+      color: inherit;
+      font-size: 15px;
+      margin-top: 5px;
+      text-decoration: none
+    }
+
+    .form .cost p {
+      font-size: 22px
+    }
+  </style>
+  <!-- Global site tag (gtag.js) - Google Ads -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16705856210"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'AW-16705856210');
+  </script>
+</head>
+
+<body id="body">
+  <div class="wrapper">
+    <section class="block one">
+      <div class="wrap">
+        <div class="header flex flex-mid flex-around sfr upp blue-dark lh120">
+          <div><img src="images/logooo.png"></div>
+          <div>
+            Mahsulot
+            <br>
+            sertifikatlangan
+          </div>
+          <div>
+            Yilning
+            <br>
+            maxsuloti
+          </div>
+          <div>
+            Oftalmologiya jamiyati
+            <br>
+            tasdiqlandi
+          </div>
+        </div>
+        <div class="title px45 white sfh center lh120" style="color: #000">
+          VizuKaps — sizning ko'rishingizni samarali takomillashtirish va himoya qilish tabiiy ingredientlar asosida
+          yaratilgan
+        </div>
+        <div class="formblock flex flex-top flex-center">
+          <div class="info px18">
+            <ul>
+              <li style="color: #000">Ko'rishni samarali ravishda kuchaytirishga yordam beradi</li>
+              <li style="color: #000">Aniq va ravshan ko'rishni saqlashga yordam beradi</li>
+              <li style="color: #000">Ko'z ichi bosimini pasaytirishga harakat qiladi</li>
+              <li style="color: #000">
+                Xavfli kasalliklardan immunitet
+                <br>
+                hosil qilishga ko'maklashadi
+              </li>
+              <li style="color: #000">Ko'zning tuzilishini himoya qilishga yordam beradi</li>
+            </ul>
+            <div class="remain flex flex-top">
+              <span class="px50 white center buy">977</span>
+              <span class="white upp px20 lh120" style="color: #000">
+                dona
+                <br>
+                bugun sotib olishdi
+              </span>
+            </div>
+          </div>
+          <div class="form">
+            <div class="akcia center sfb px18">
+              Faqat
+              <span>bugun!</span>
+            </div>
+            <div class="cost flex flex-between black">
+              <div class="new sfl px19">
+                <p class="sfh px30 pink">
+                  <span>-50% chegirma</span>
+                  *
+                </p>
+              </div>
+            </div>
+            <form method="post" class="main-order-form order_form order-form" action="../send.php"
+              onsubmit="validateform(this); return false;">
+              <input placeholder="Ism" type="text" name="name" class="name" required="" minlength="3">
+              <input minlength="5" maxlength="17" no-auto-placeholder="" placeholder="-- --- -- --" type="tel"
+                name="phone" class="" oninput="enterNumber(this)" required="">
+              <button type="submit" class="button upp px16 sfb white">
+                Buyurtma qilish
+              </button>
+              <p class="px14 center black spec sfl">
+                Shoshiling! Aksiyadan
+                <span class="left-pack sfh px18 pack_count">11</span>
+                dona qoldi!
+              </p>
+              <p class="px14 center black spec sfl">*To'liq kurs olsangiz</p>
+
+              <div style="text-align: center; color: black"><span>"xun takviyesi, dori vositasi emas"</span></div>
+            </form>
+          </div>
+        </div>
+        <p class="desc px30 white center lh120">
+          Ko'zlar eng muhim organlardan biridir, chunki ular orqali biz dunyoni, yaqinlarimizni va qarindoshlarimizni
+          ko'ramiz. Agar ko'z sog'lig'ingizga g'amxo'rlik qilmasangiz, oqibatlari o'ta og'ir bo'ladi.
+        </p>
+        <div class="pics flex flex-center white center">
+          <div>
+            <img src="images/pic1.png">
+            <p class="sfb px23">Glaukoma</p>
+            <p class="sfl px18 lh140">Ko'z ichi bosimining buzilishi, optik asab ko'rlikka olib keladi.</p>
+          </div>
+          <div>
+            <img src="images/pic2.png">
+            <p class="sfb px23">Katarakt</p>
+            <p class="sfl px18 lh140">Ko'z linzalarini bulutli qilish, ko'rlikka olib keladi.</p>
+          </div>
+          <div>
+            <img src="images/pic3.png">
+            <p class="sfb px23">Ko'rlik</p>
+            <p class="sfl px18 lh140">To'liq va qaytarib bo'lmaydigan ko'rishni yo'qotish.</p>
+          </div>
+        </div>
+        <p class="desc2 px30 center lh120">Iltimos, ushbu alomatlarni o'zingizni tekshiring.</p>
+        <div class="sympt flex flex-center center sfh px16 lh140">
+          <div>
+            <img src="images/pic4.png">
+            <p>Ob'ektlarni ko'rmayapsiz</p>
+          </div>
+          <div>
+            <img src="images/pic5.png">
+            <p>Narsalar ranglari pasayadi</p>
+          </div>
+          <div>
+            <img src="images/pic6.png">
+            <p>Masofadagi narsalarni ko'rmayapsiz</p>
+          </div>
+          <div>
+            <img src="images/pic8.png">
+            <p>Tanishlarning yuzlarini ko'ra olmayapsiz</p>
+          </div>
+          <div>
+            <img src="images/pic9.png">
+            <p>Ko'z atrofidagi og'riq</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="block two">
+      <div class="wrap">
+        <p class="att px30 white lh120">
+          <span class="sfh">Agar sizda kamida bitta simptom bo'lsa, —</span>
+          <br>
+          VizuKaps-ga buyurtma bering va o'zingizni ko'rishingizni
+          <br>
+          yomonlashga olib bormang!
+        </p>
+        <div class="form-block2 flex flex-between">
+          <div style="margin-top: 40px">
+            <p class="sfb px23 lh140">
+              Ajoyib taklifdan foydalaning,
+              <br>
+              <span class="px38 lh140">
+                VizuKaps-ga -50% chegirma
+                <span class="red2">buyurtma bering!</span>
+              </span>
+            </p>
+            <p class="px18 white spec sfl">
+              Shoshiling! Aksiyada
+              <span class="left-pack px18 sfh pack_count">11</span>
+              dona qoldi!
+            </p>
+            <p class="px14 center black spec sfl">*To'liq kurs olsangiz</p>
+          </div>
+          <div>
+            <form method="post" class="main-order-form order_form order-form" action="../send.php"
+              onsubmit="validateform(this); return false;">
+              <!-- <select name="country" id="country" class="country_select"></select> -->
+              <input placeholder="Ism" type="text" name="name" class="name" required="" minlength="3">
+              <input minlength="5" maxlength="17" no-auto-placeholder="" placeholder="-- --- -- --" type="tel"
+                name="phone" class="" oninput="enterNumber(this)" required="">
+              <button type="submit" class="button upp px16 sfb white">
+                Buyurtma qilish
+              </button>
+
+              <div style="text-align: center; color: black"><span>"xun takviyesi, dori emas"</span></div>
+            </form>
+          </div>
+          <div class="box">
+            <img src="images/prod.png">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end section two -->
+    <section class="block three">
+      <div class="wrap">
+        <p class="px80 center lh140 white sft">Nimaga VizuKaps?</p>
+        <p class="px22 lh120 center white">
+          dorivor o'simliklarning mahalliy kontsentratlariga asoslangan o'simlik kapsulalar va ko'zning kuchayishi
+          natijasida ko'rish qobiliyatini pasayishi bilan ko'rish organlarining holati va funktsiyalariga kompleks
+          tiklovchi ta'sir ko'rsatadigan tabiiy komponentlar, o'simlik sharbatining misellari, yurak-qon tomir, asab,
+          endokrin tizimlarining buzilishi va holatlari, yuqumli va yallig'lanish jarayonlari, tashqi ta'sir qilish
+          natijasida vizual analizatorning yoshga bog'liq buzilishlari salbiy omillar, jarrohlik aralashuvi, bosh
+          jarohatlari, bolalik paytida irsiy omil bilan.
+        </p>
+        <p class="center sfh px25 title2">VizuKaps — bu sog'lom ko'rish</p>
+        <div class="pics flex flex-between sfh px18">
+          <div class="flex flex-mid">
+            <img src="images/pic10.png">
+            <p>Jarrohlik qilinmaydi</p>
+          </div>
+          <div class="flex flex-mid">
+            <img src="images/pic11.png">
+            <p>Qimmatbaho dorilarsiz</p>
+          </div>
+          <div class="flex flex-mid">
+            <img src="images/pic12.png">
+            <p>Og'riq yoki sog'liq uchun zarar yo'q</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="block four">
+      <div class="wrap">
+        <p class="sft px28 center"><span class="sfh">VizuKaps — 50% tabiiy vosita</span></p>
+        <p class="center px18">
+          VizuKaps-dagi komponentlarning samaradorligi qabulning birinchi kursidan keyin ko'rishni yaxshilaydi.Ota
+          bobolarimiz doim tabiiy yo’l bilan davolanishgan va ancha sog’lom bo’lishgan. To’g’rimi? Maxsulotimiz
+          tarkibidagi Kalendula esa nafaqat biz, balki Evropaning qirolichalari tomonidan keng qo’llanib kelingan.
+        </p>
+      </div>
+    </section>
+    <section class="block five">
+      <div class="wrap">
+        <div class="flex flex-center flex-wrap sfl">
+          <div>
+            <p>Taurin</p>
+            <p>
+              Yallig'lanishni ketkazishga, arpa, qaynoq, ko'zning gelmintozi, demodikoz, quruqlik va tirnash
+              <br>
+              xususiyati yo'q qilishga yordam beradi.
+            </p>
+          </div>
+          <div>
+            <p>Buta mevasi</p>
+            <p>
+              Tabiiy (o'zgarmas) shaklida u ko'rish keskinligini oshirishga, ko'zning to'r pardasini
+              <br>
+              kuchaytirishga yordam beradi
+            </p>
+          </div>
+          <div>
+            <p>Karnosin</p>
+            <p>
+              Ko'zning lipid qatlamiga kirib boradi va ultrabinafsha zararlaridan himoya qilishda, glaukoma va
+              kataraktni engillashtirishga yordam beradi.
+            </p>
+          </div>
+          <div>
+            <p>Arpa sutli sharbati</p>
+            <p>
+              Barcha hujayralarni oziqlantiradi, toksinlarni yo'q qilishga yordam beradi va arpa, furunkuloz va
+              rivojlanishiga to'sqinlik qilishda yordam beradi.
+            </p>
+          </div>
+          <div style="padding-top: 200px; padding-left: 18px; padding-right: 18px; background-color: #251d1b">
+            <p>
+              GINKGO BILOB
+              <br>
+              EXTRAKT
+            </p>
+            <p>
+              Yuqori antioksidant faollikka ega. Mikrosirkulyatsiyani yaxshilashga yordam beradi. Kapillyarlar
+              mo'rtlikning oldini olishda ko'maklashadi. Retinaning tomirlarida qon oqimini yaxshilashga yordam
+              beradi.
+            </p>
+          </div>
+          <div>
+            <p>Vitaminlar - B, C, A,</p>
+            <p>Kapillyar qon aylanishini kuchaytirishda, fundus bosimini normallashtirishda yordam beradi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <p class="title center sfh white">
+      <span class="px45 lh120">Ko'zning buzilishlarni kutmang —</span>
+      <br>
+      <span class="px35">hozir VizuKaps-ga buyurtma bering va ko'zlaringizning sog'lig'ini yaxshilang</span>
+    </p>
+    <div class="formblock flex flex-top flex-center">
+      <div class="info px25">
+        <ul>
+          <li>
+            Jarrohlik
+            <br>
+            qilinmaydi
+          </li>
+          <li>
+            Qimmatbaho
+            <br>
+            dorilarsiz
+          </li>
+          <li>
+            Og'riq yoki sog'liq uchun
+            <br>
+            zararli tomonlari aniqlanmagan
+          </li>
+        </ul>
+        <div class="remain flex flex-top">
+          <span class="px50 white center buy">977</span>
+          <span class="white upp px20 lh120" style="color: #fff">
+            dona
+            <br>
+            bugun sotildi
+          </span>
+        </div>
+      </div>
+      <div class="form">
+        <div class="akcia center sfb px18">
+          Faqat
+          <span>bugun!</span>
+        </div>
+        <div class="cost flex flex-between black">
+          <div class="new sfl px19">
+            <p class="sfh px30 pink">
+              <span>-50% chegirma</span>
+              *
+            </p>
+          </div>
+        </div>
+        <form method="post" class="main-order-form order_form order-form" id="order_form" action="../send.php"
+          onsubmit="validateform(this); return false;">
+          <input placeholder="Ism" type="text" name="name" class="name" required="" minlength="3">
+          <input minlength="5" maxlength="17" no-auto-placeholder="" placeholder="-- --- -- --" type="tel" name="phone"
+            class="" oninput="enterNumber(this)" required="">
+          <button type="submit" class="button upp px16 sfb white">
+            Buyurtma qilish
+          </button>
+          <p class="px14 center black spec sfl">
+            Shoshiling! Aksiyada
+            <span class="left-pack px18 sfh pack_count">11</span>
+            dona qoldi!
+          </p>
+          <p class="px14 center black spec sfl">*To'liq kurs olsangiz</p>
+
+          <div style="text-align: center; color: black"><span>"xun takviyesi, dori emas"</span></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer_section">
+
+    <a href="#">Maxfiylik siyosati</a>
+    <a href="#">Foydalanish shartlari</a>
+  </footer>
+
+  <script>
+    function enterNumber(e) {
+      e.value = e.value.replace(/[^0-9+]/g, '');
+    }
+
+    function validateform(form) {
+      if (form.elements['name'].value == '') {
+        alert('Iltimos, ismingizni kiriting');
+        return false;
+      }
+      if (form.elements['name'].value.length < 2) {
+        alert('Iltimos, ismingizni kiriting');
+        return false;
+      }
+      var phone_reg = new RegExp('[A-z А-я]', 'g');
+      var literInPhone = phone_reg.test(form.elements['phone'].value);
+      if (form.elements['phone'].value == '') {
+        alert('Iltimos, telefon raqamingizni kiriting');
+        return false;
+      }
+      if (literInPhone) {
+        alert('Iltimos, telefon raqamingizni kiriting');
+        return false;
+      }
+      if (form.elements['phone'].value.length > 17) {
+        alert('Iltimos, telefon raqamingizni kiriting');
+        return false;
+      }
+
+      var btn = form.querySelector('.button');
+      if (btn) {
+        btn.setAttribute('disabled', true);
+      }
+      form.submit();
+    }
+  </script>
+
+
+
+
+  <!-- Success Modal -->
+  <div id="successModal"
+    style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.5); align-items:center; justify-content:center;">
+    <div
+      style="background-color:#fefefe; margin:auto; padding:20px; border:1px solid #888; width:90%; max-width:500px; border-radius:10px; text-align:center; position: relative; top: 50%; transform: translateY(-50%); box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
+      <h2 style="color:#28a745; margin-bottom:15px;">Buyurtma qabul qilindi!</h2>
+      <p style="font-size:16px; color:#333; margin-bottom:20px;">
+        Rahmat. Tez orada operator siz bilan bog'lanadi.
+      </p>
+      <button onclick="document.getElementById('successModal').style.display='none'"
+        style="background-color:#28a745; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer; font-size:16px; font-weight:bold;">
+        OK
+      </button>
+    </div>
+  </div>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      var urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('status') === 'success') {
+        var modal = document.getElementById('successModal');
+        if (modal) modal.style.display = 'flex';
+
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-16705856210/p3ggCNCluOgbENLF_J0-',
+            'value': 45,
+            'currency': 'USD',
+            'transaction_id': Date.now()
+          });
+        }
+      }
+    });
+  </script>
+  <script src="js/simple-submit.js"></script>
+</body>
+
+</html>
