@@ -16,7 +16,7 @@ export default async function handler(req, res) {
   const API_KEY = 'skuVwANNCTIUTecoOWbUh6Ck1bSUAgJEnNb3Wvxb6';
   const OFFER_ID = '6610';
   const STREAM_ID = '86yFNmPe';
-  const COUNTRY_CODE = 'ID'; // Ex: MX, BR, ES
+  const COUNTRY_CODE = 'UZ'; // Ex: MX, BR, ES
   // ==========================================
   const API_URL = 'http://api.cpa.tl/api/lead/send';
   try {
@@ -63,9 +63,9 @@ export default async function handler(req, res) {
     if (response.ok && !result.error && !result.errmsg) {
       res.status(200).json({ success: true, data: result });
     } else {
-      res.status(400).json({ 
-        error: result.error || result.errmsg || 'Unknown error', 
-        details: result 
+      res.status(400).json({
+        error: result.error || result.errmsg || 'Unknown error',
+        details: result
       });
     }
   } catch (error) {

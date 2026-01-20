@@ -1,12 +1,12 @@
 console.log('=== Script carregado ===');
-// ===== TRADUÇÕES - UZBEK =====
+// ===== TRADUÇÕES - RUSSIAN =====
 var MENSAGENS = {
-    nomeInvalido: 'Iltimos, ismingizni kiriting',
-    telefoneInvalido: 'Iltimos, telefon raqamingizni to\'g\'ri kiriting',
-    enviando: 'Yuborilmoqda...',
-    botaoEnviar: 'Buyurtma qilish', // Texto original do botão
-    erro: 'Xato',
-    erroEnvio: 'Yuborishda xato'
+    nomeInvalido: 'Пожалуйста, введите ваше имя',
+    telefoneInvalido: 'Пожалуйста, введите правильный номер телефона',
+    enviando: 'Отправка...',
+    botaoEnviar: 'Заказать', // Texto original do botão
+    erro: 'Ошибка',
+    erroEnvio: 'Ошибка отправки'
 };
 // =====================================================
 // Flag to prevent double submission logic if needed
